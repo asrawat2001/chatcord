@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 const botName = "ChatCord Bot";
 
 (async () => {
-  pubClient = createClient({ url: "redis://127.0.0.1:6379" });
+  pubClient = createClient({ url: "https://masterchatapp.herokuapp.com/" });
   await pubClient.connect();
   subClient = pubClient.duplicate();
   io.adapter(createAdapter(pubClient, subClient));
